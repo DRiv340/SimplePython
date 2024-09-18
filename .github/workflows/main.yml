@@ -19,11 +19,5 @@
           shell: bash
           run: pip install bandit
 
-        - name: Go Back
-          run: cd ..
-
-        - name: Go back
-          run: ls
-
         - name: Bandit
           run: bandit -r .
