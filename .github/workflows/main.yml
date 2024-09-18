@@ -1,19 +1,14 @@
-sast_scan:
-  name: Run Bandit Scan
-  runs-on: ubuntu-latest
 
-  steps:
-      name: Checkout Code
-      uses: actions/checkout@v4
+  name: main
+  on:
+    push:
+      branches:
+       - 'main'
 
-      name: Set Up Python
-      uses: actions/setup-python@v3
-      with:
-        python-version: 3.8
+  jobs:
+    bandir:
+      runs-on: linux-latest
 
-      name: Install Bandit
-      run: pip install bandit
-
-      name: Run Bandit Scan
-      run: bandit -r .
-
+      steps:
+        - name: Bandit
+          run: bandit -r .
