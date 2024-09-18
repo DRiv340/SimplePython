@@ -23,7 +23,7 @@
           run: cd ..
 
         - name: Go back
-          run: cd ..
+          run: ls
 
         - name: Bandit
           run: bandit -r .
