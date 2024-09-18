@@ -19,5 +19,11 @@
           shell: bash
           run: pip install bandit
 
+        - name: Go Back
+          run: cd ..
+
+        - name: Go back
+          run: cd ..
+
         - name: Bandit
-          run: bandit -r ../main.py
+          run: bandit -r .
