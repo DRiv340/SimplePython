@@ -6,7 +6,7 @@
        - 'main'
 
   jobs:
-    bandir:
+    bandit:
       runs-on: linux-latest
 
       steps:
