@@ -20,4 +20,4 @@
           run: pip install bandit
 
         - name: Bandit
-          run: bandit -r ../../.
+          run: bandit -r ../.
