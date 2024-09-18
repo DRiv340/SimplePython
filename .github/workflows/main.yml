@@ -19,8 +19,5 @@
           shell: bash
           run: pip install bandit
 
-        - name: target
-          run:  git rev-parse HEAD
-
         - name: Bandit
-          run: bandit -r $(target)
+          run: bandit -r ../../.
