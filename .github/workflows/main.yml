@@ -20,7 +20,7 @@
           run: pip install bandit
 
         - name: target
-          run:  git config --get remote.origin.url
+          run:  git rev-parse HEAD
 
         - name: Bandit
           run: bandit -r $(target)
