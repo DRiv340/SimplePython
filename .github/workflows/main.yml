@@ -19,5 +19,8 @@
           shell: bash
           run: pip install bandit
 
+        - name: get Target
+          run: $target == git config --get remote.origin.url
+
         - name: Bandit
-          run: bandit -r .
+          run: bandit -r $target
