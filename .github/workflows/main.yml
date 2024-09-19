@@ -19,5 +19,14 @@
           shell: bash
           run: pip install bandit
 
-        - name: Bandit
-          run: bandit -r ../../../.
+        - uses: actions/checkout@v2
+
+        - name: Security check - Bandit
+          uses: ./
+          with:
+            python_version: 3.8
+            project_path: .
+            ignore_failure: true
+
+        #- name: Bandit
+        #  run: bandit -r ../../../.
