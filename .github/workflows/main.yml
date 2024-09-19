@@ -10,6 +10,9 @@
       runs-on: ubuntu-latest
 
       steps:
+        - name: checkout
+          uses: actions/checkout@v2
+
         - name: Set up Python 3.8
           uses: actions/setup-python@v5
           with:
@@ -19,12 +22,4 @@
           shell: bash
           run: pip install bandit
 
-        - uses: shundor/bandit-action@v1
-          with:
-              path: "."
-              level: high
-              confidence: high
-              exit_zero: true
-
-        #- name: Bandit
-        #  run: bandit -r ../../../.
+        - run: bandit -r .
