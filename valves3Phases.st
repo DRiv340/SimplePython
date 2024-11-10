@@ -1,20 +1,12 @@
 PROGRAM program2
   VAR
-    cycleOn AT %QX0.0 : BOOL;
-    stop AT %QX0.1 : BOOL;
-  END_VAR
-  VAR
     turnOffCoagV1 : BOOL;
   END_VAR
   VAR
     CoagulationV AT %IX0.0 : BOOL;
     ChlorineV AT %IX0.1 : BOOL;
     FluoridationV AT %IX0.2 : BOOL;
-  END_VAR
-  VAR
-    FillTank : BOOL;
-  END_VAR
-  VAR
+    FillTank AT %IX0.3 : BOOL;
     FirstPhase AT %QX0.0 : BOOL;
     SecondPhase AT %QX0.1 : BOOL;
     ThirdPhase AT %QX0.2 : BOOL;
@@ -41,7 +33,7 @@ CONFIGURATION Config0
   END_RESOURCE
 END_CONFIGURATION
 
-(*DBG:char md5[] = "3122fc56777da35ec8b29d588b1dc45e";*)
+(*DBG:char md5[] = "e0a0cdaffac12672eafd8ea373bced49";*)
 (*DBG:/**)
 (*DBG: * This file is part of OpenPLC Runtime*)
 (*DBG: **)
@@ -80,8 +72,6 @@ END_CONFIGURATION
 (*DBG:    void *ptr;*)
 (*DBG:    __IEC_types_enum type;*)
 (*DBG:} debug_vars[] = {*)
-(*DBG:    {&(RES0__INSTANCE0.CYCLEON), BOOL_ENUM},*)
-(*DBG:    {&(RES0__INSTANCE0.STOP), BOOL_ENUM},*)
 (*DBG:    {&(RES0__INSTANCE0.TURNOFFCOAGV1), BOOL_ENUM},*)
 (*DBG:    {&(RES0__INSTANCE0.COAGULATIONV), BOOL_ENUM},*)
 (*DBG:    {&(RES0__INSTANCE0.CHLORINEV), BOOL_ENUM},*)
@@ -92,7 +82,7 @@ END_CONFIGURATION
 (*DBG:    {&(RES0__INSTANCE0.THIRDPHASE), BOOL_ENUM},*)
 (*DBG:};*)
 (*DBG:*)
-(*DBG:#define VAR_COUNT               10*)
+(*DBG:#define VAR_COUNT               8*)
 (*DBG:*)
 (*DBG:uint16_t get_var_count(void)*)
 (*DBG:{*)
